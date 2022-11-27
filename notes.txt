@@ -1,0 +1,25 @@
+//XMLHTTPREQUEST
+CREATE A XHR OBJECT
+XHR - XMLHTTPREQUEST
+SYNTAX;-
+var object name = new XMLHTTPREQUEST
+
+
+
+//disply name and area using for loop
+var request = new XMLHttpRequest();
+console.log(request);
+request.open("GET","https://restcountries.com/v3.1/all")
+request.send()
+request.onload = function()
+{
+    var data = request.response;
+    console.log(JSON.parse(data));
+    var result = JSON.parse(data);
+    for (var i = 0; i < result.length; i++) {
+        console.log(result[i].area, result[i].name.common);
+      }
+    
+}
+
+//
